@@ -9,11 +9,10 @@
          TextElement.FontWeight="Regular"
          TextElement.FontSize="13"
          TextOptions.TextFormattingMode="Ideal"
-         TextOptions.TextRenderingMode="Auto"
-        DataContext="StaticResource MainVM"
+         TextOptions.TextRenderingMode="Auto"        
          Background="{DynamicResource MaterialDesignPaper}"
          FontFamily="{DynamicResource MaterialDesignFont}"
-            Title="MainWindow" Height="500" Width="700"
+         Title="MainWindow" Height="500" Width="700"
         >
         
     
