@@ -1,0 +1,23 @@
+﻿<Window x:Class="Dish_Decision_Project.ChiTietMonAn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dish_Decision_Project"
+        mc:Ignorable="d"
+        Title="ChiTietMonAn" Height="450" Width="800">
+    <Grid>
+        <Grid Grid.Row="0" Height="auto">
+            <Grid.RowDefinitions></Grid.RowDefinitions>
+            <TextBox Text="Hello" FontSize="30"></TextBox>
+        </Grid>
+        <Grid Grid.Row="1" Height="auto">
+            <Grid.RowDefinitions></Grid.RowDefinitions>
+            
+            <Grid>
+                <TextBox Height="50" HorizontalAlignment="Center" Text="Canh khổ qua nhồi thịt"></TextBox>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</Window>

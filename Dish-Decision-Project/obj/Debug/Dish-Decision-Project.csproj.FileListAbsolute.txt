@@ -22,3 +22,4 @@ C:\Users\My PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debu
 C:\Users\My PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.pdb
 C:\Users\My PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\My PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\My PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\ChiTietMonAn.g.cs
