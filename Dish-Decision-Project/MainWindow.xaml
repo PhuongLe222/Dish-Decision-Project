@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -84,44 +84,47 @@
                 </DockPanel>
             </materialDesign:ColorZone>
         </Grid>
-        <!--Main menu-->
+        <!--Main menu-->       
         <Grid Grid.Row="1" Margin="0,0,0.333,-0.333">
             <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}" 
-                       Margin="135,20,135.333,285.667" 
+                       Margin="130,10,140,449" 
                        HorizontalAlignment="Center" 
                        Foreground="OrangeRed" 
-                       Text="Tìm kiếm món ăn theo nguyên liệu" />
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="37,62,37.333,208.667" >
-                <TextBlock VerticalAlignment="Center">
-                    Chọn số lượng nguyên liệu :
-                </TextBlock>
+                       Text="Tìm kiếm món ăn theo nguyên liệu"  />
+            <StackPanel Orientation="Horizontal" Margin="10,75,10,359"  Height="65">
+                <TextBlock VerticalAlignment="Center" Margin="0,25,10,9.667" Height="30" RenderTransformOrigin="0.444,-0.133" ><Run Text="Chọn số lượng nguyên liệu :"/></TextBlock>
                 <ComboBox
                 x:Name="optSoLuong"
                 Style="{StaticResource MaterialDesignFilledComboBox}"
-                IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+                IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
                 materialDesign:HintAssist.Hint="Tối đa 5 nguyên liệu"
-                Width="175" Margin="30 ,10">
+                Width="175" Margin="7" SelectionChanged="optSoLuong_SelectionChanged">
                     <ComboBoxItem x:Name="optSoLuong1" Content="1 nguyên liệu" />
                     <ComboBoxItem x:Name="optSoLuong2" Content="2 nguyên liệu" />
                     <ComboBoxItem x:Name="optSoLuong3" Content="3 nguyên liệu" />
                     <ComboBoxItem x:Name="optSoLuong4" Content="4 nguyên liệu" />
                     <ComboBoxItem x:Name="optSoLuong5" Content="5 nguyên liệu" />
                 </ComboBox>
-                <TextBlock VerticalAlignment="Center">
-                    Chọn loại món ăn:
-                </TextBlock>
+                <TextBlock VerticalAlignment="Center" Height="30" Margin="10,25,0,9.667" Width="108"><Run Text="Chọn loại món ăn:"/></TextBlock>
                 <ComboBox
                 x:Name="optLoaiMonAn"
                 Style="{StaticResource MaterialDesignFilledComboBox}"
-                IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+                IsEnabled="{Binding IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
                 materialDesign:HintAssist.Hint="Loại món ăn"
-                Width="175" Margin="30 ,10">
+                Width="175" Margin="7">
                     <ComboBoxItem x:Name="optLoaiMonAn1" Content="Món chay" />
                     <ComboBoxItem x:Name="optLoaiMonAn2" Content="Món mặn" />
                 </ComboBox>
+                <RepeatButton
+                x:Name="btnSearchNL"
+                ToolTip="Resource name: MaterialDesignRaisedButton"                
+                Content="Tìm kiếm"
+                Background="Black"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="90" />
             </StackPanel>
-            <StackPanel Margin="37,150,202,55">
-                <Grid Height="69" Margin="10,0,21.333,0" RenderTransformOrigin="0.5,0.5">
+            
+                <StackPanel Grid.Column="0" Margin="37,145,202,10" Height="349">
+                <Grid VerticalAlignment="Center">
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -131,10 +134,138 @@
                         </TransformGroup>
                     </Grid.RenderTransform>
                     <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
-                    Nhập nguyên liệu thứ :
+                    Nhập nguyên liệu thứ 1:
                     </TextBlock>
                     <TextBox
-                    x:Name="txtNguyenLieu"    
+                    x:Name="txtNguyenLieu1"    
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalAlignment="Top"
+                    Height="50"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Nhập nguyên liệu"
+                    IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.61"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                </Grid>
+                <Grid VerticalAlignment="Center">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.51"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    Nhập nguyên liệu thứ 2:
+                    </TextBlock>
+                    <TextBox
+                    x:Name="txtNguyenLieu2"    
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalAlignment="Top"
+                    Height="50"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Nhập nguyên liệu"
+                    IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.61"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                </Grid>
+                <Grid VerticalAlignment="Center">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.51"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    Nhập nguyên liệu thứ 3:
+                    </TextBlock>
+                    <TextBox
+                    x:Name="txtNguyenLieu3"    
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalAlignment="Top"
+                    Height="50"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Nhập nguyên liệu"
+                    IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.61"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                </Grid>
+                <Grid VerticalAlignment="Center">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.51"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    Nhập nguyên liệu thứ 4:
+                    </TextBlock>
+                    <TextBox
+                    x:Name="txtNguyenLieu4"    
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalAlignment="Top"
+                    Height="50"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Nhập nguyên liệu"
+                    IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.61"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                </Grid>
+                <Grid VerticalAlignment="Center">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.51"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    Nhập nguyên liệu thứ 5:
+                    </TextBlock>
+                    <TextBox
+                    x:Name="txtNguyenLieu5"    
                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                     VerticalAlignment="Top"
                     Height="50"
@@ -154,11 +285,8 @@
                     </TextBox>
                 </Grid>
             </StackPanel>
-            <RepeatButton
-                ToolTip="Resource name: MaterialDesignRaisedButton"                
-                Content="Tìm kiếm"
-                Background="Black"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="617,170,51,141" Height="Auto" />
-        </Grid>
+            
+                        </Grid>
+        
     </Grid>
 </Window>
