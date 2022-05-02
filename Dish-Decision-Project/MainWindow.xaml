@@ -54,6 +54,7 @@
                                     Opacity=".56" />
                                 </Button>
                                 <TextBox
+                                x:Name="txtSearch"
                                 Grid.Column="1"
                                 Margin="8 0 0 0"
                                 materialDesign:HintAssist.Hint="Tìm kiếm món ăn "
@@ -64,6 +65,7 @@
                             </Grid>
                         </materialDesign:ColorZone>
                         <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
+                        x:Name="btnSearchMA"
                         Background="Black"
                         ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -99,11 +101,11 @@
                 IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
                 materialDesign:HintAssist.Hint="Tối đa 5 nguyên liệu"
                 Width="175" Margin="30 ,10">
-                    <ComboBoxItem Content="1 nguyên liệu" />
-                    <ComboBoxItem Content="2 nguyên liệu" />
-                    <ComboBoxItem Content="3 nguyên liệu" />
-                    <ComboBoxItem Content="4 nguyên liệu" />
-                    <ComboBoxItem Content="5 nguyên liệu" />
+                    <ComboBoxItem x:Name="optSoLuong1" Content="1 nguyên liệu" />
+                    <ComboBoxItem x:Name="optSoLuong2" Content="2 nguyên liệu" />
+                    <ComboBoxItem x:Name="optSoLuong3" Content="3 nguyên liệu" />
+                    <ComboBoxItem x:Name="optSoLuong4" Content="4 nguyên liệu" />
+                    <ComboBoxItem x:Name="optSoLuong5" Content="5 nguyên liệu" />
                 </ComboBox>
                 <TextBlock VerticalAlignment="Center">
                     Chọn loại món ăn:
@@ -114,8 +116,8 @@
                 IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
                 materialDesign:HintAssist.Hint="Loại món ăn"
                 Width="175" Margin="30 ,10">
-                    <ComboBoxItem Content="Món chay" />
-                    <ComboBoxItem Content="Món mặn" />
+                    <ComboBoxItem x:Name="optLoaiMonAn1" Content="Món chay" />
+                    <ComboBoxItem x:Name="optLoaiMonAn2" Content="Món mặn" />
                 </ComboBox>
             </StackPanel>
             <StackPanel Margin="37,150,202,55">
@@ -132,19 +134,20 @@
                     Nhập nguyên liệu thứ :
                     </TextBlock>
                     <TextBox
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                VerticalAlignment="Top"
-                Height="50"
-                AcceptsReturn="True"
-                TextWrapping="Wrap"
-                VerticalScrollBarVisibility="Auto"
-                materialDesign:HintAssist.Hint="This is a text area"
-                IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
+                    x:Name="txtNguyenLieu"    
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalAlignment="Top"
+                    Height="50"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Nhập nguyên liệu"
+                    IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
                         <TextBox.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
                                 <SkewTransform/>
-                                <RotateTransform Angle="-0.945"/>
+                                <RotateTransform Angle="-0.61"/>
                                 <TranslateTransform/>
                             </TransformGroup>
                         </TextBox.RenderTransform>
