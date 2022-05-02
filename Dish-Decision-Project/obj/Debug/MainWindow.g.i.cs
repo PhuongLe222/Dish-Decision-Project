@@ -43,6 +43,30 @@ namespace Dish_Decision_Project {
     /// </summary>
     public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 34 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Image logo;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 97 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox optSoLuong;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 112 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox optLoaiMonAn;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -71,6 +95,18 @@ namespace Dish_Decision_Project {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.logo = ((System.Windows.Controls.Image)(target));
+            return;
+            case 2:
+            this.optSoLuong = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 3:
+            this.optLoaiMonAn = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }

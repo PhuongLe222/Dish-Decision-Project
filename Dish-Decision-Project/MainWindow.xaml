@@ -3,20 +3,159 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Dish_Decision_Project"
+        xmlns:local="clr-namespace:Dish_Decision_Project" 
+        mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         TextElement.FontWeight="Regular"
-         TextElement.FontSize="13"
-         TextOptions.TextFormattingMode="Ideal"
-         TextOptions.TextRenderingMode="Auto"        
-         Background="{DynamicResource MaterialDesignPaper}"
-         FontFamily="{DynamicResource MaterialDesignFont}"
-         Title="MainWindow" Height="500" Width="700"
-        >
-        
-    
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <!--Thanh tìm kiếm/controlBar-->
+            <materialDesign:ColorZone
+            Background="Orange"
+            Mode="PrimaryMid"
+            Padding="16">
+                <DockPanel>
+                    <StackPanel
+                    Orientation="Horizontal"
+                    materialDesign:RippleAssist.IsCentered="True">
+                        <materialDesign:Chip Content="HÔM NAY ĂN GÌ?">
+                            <materialDesign:Chip.Icon>
+                                <Image x:Name= "logo" Source="Resources/logofood.png" />
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>
+                        <materialDesign:ColorZone
+                        Background="Azure"
+                        Mode="Standard"
+                        Padding="8 4 8 4"
+                        CornerRadius="2"
+                        Panel.ZIndex="1"
+                        Margin="16 0 0 0"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource MaterialDesignToolButton}">
+                                    <materialDesign:PackIcon
+                                    Kind="Search"
+                                    Opacity=".56" />
+                                </Button>
+                                <TextBox
+                                Grid.Column="1"
+                                Margin="8 0 0 0"
+                                materialDesign:HintAssist.Hint="Tìm kiếm món ăn "
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                BorderThickness="0"
+                                MinWidth="400"
+                                VerticalAlignment="Center" />
+                            </Grid>
+                        </materialDesign:ColorZone>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
+                        Background="Black"
+                        ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Margin="20 0 0 0"
+                        Width="auto"
+                        Height="40">
+                            <materialDesign:PackIcon
+                            Kind="Magnify"
+                            Height= "auto"
+                            Width="auto" 
+                            Margin="5"
+                            VerticalAlignment="Center" 
+                        />
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <!--Main menu-->
+        <Grid Grid.Row="1" Margin="0,0,0.333,-0.333">
+            <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}" 
+                       Margin="135,20,135.333,285.667" 
+                       HorizontalAlignment="Center" 
+                       Foreground="OrangeRed" 
+                       Text="Tìm kiếm món ăn theo nguyên liệu" />
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="37,62,37.333,208.667" >
+                <TextBlock VerticalAlignment="Center">
+                    Chọn số lượng nguyên liệu :
+                </TextBlock>
+                <ComboBox
+                x:Name="optSoLuong"
+                Style="{StaticResource MaterialDesignFilledComboBox}"
+                IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+                materialDesign:HintAssist.Hint="Tối đa 5 nguyên liệu"
+                Width="175" Margin="30 ,10">
+                    <ComboBoxItem Content="1 nguyên liệu" />
+                    <ComboBoxItem Content="2 nguyên liệu" />
+                    <ComboBoxItem Content="3 nguyên liệu" />
+                    <ComboBoxItem Content="4 nguyên liệu" />
+                    <ComboBoxItem Content="5 nguyên liệu" />
+                </ComboBox>
+                <TextBlock VerticalAlignment="Center">
+                    Chọn loại món ăn:
+                </TextBlock>
+                <ComboBox
+                x:Name="optLoaiMonAn"
+                Style="{StaticResource MaterialDesignFilledComboBox}"
+                IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"
+                materialDesign:HintAssist.Hint="Loại món ăn"
+                Width="175" Margin="30 ,10">
+                    <ComboBoxItem Content="Món chay" />
+                    <ComboBoxItem Content="Món mặn" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="37,150,202,55">
+                <Grid Height="69" Margin="10,0,21.333,0" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.51"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    Nhập nguyên liệu thứ :
+                    </TextBlock>
+                    <TextBox
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                VerticalAlignment="Top"
+                Height="50"
+                AcceptsReturn="True"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="This is a text area"
+                IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}" Margin="271,3,31.334,0" RenderTransformOrigin="0.5,0.5" >
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.945"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                </Grid>
+            </StackPanel>
+            <RepeatButton
+                ToolTip="Resource name: MaterialDesignRaisedButton"                
+                Content="Tìm kiếm"
+                Background="Black"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="617,170,51,141" Height="Auto" />
+        </Grid>
     </Grid>
 </Window>
