@@ -67,11 +67,13 @@
                         <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
                         x:Name="btnSearchMA"
                         Background="Black"
+                        Command="{Binding SearchCommand}"
+                        CommandParameter="{Binding ElementName= MainWindow}"
                         ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Margin="20 0 0 0"
                         Width="auto"
-                        Height="40">
+                        Height="40" Click="btnSearchMA_Click">
                             <materialDesign:PackIcon
                             Kind="Magnify"
                             Height= "auto"
@@ -120,7 +122,7 @@
                 ToolTip="Resource name: MaterialDesignRaisedButton"                
                 Content="Tìm kiếm"
                 Background="Black"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="90" />
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="90" Click="btnSearchNL_Click" />
             </StackPanel>
             
                 <StackPanel Grid.Column="0" Margin="37,145,202,10" Height="349">

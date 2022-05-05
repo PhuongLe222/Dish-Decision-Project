@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Dish-Decision-Project"
+    "\\Dish-Decision-Project",
+    "\\Dish-Decision-Project\\ViewModel"
   ],
-  "SelectedNode": "\\Dish-Decision-Project.sln",
+  "SelectedNode": "\\Dish-Decision-Project\\bin",
   "PreviewInSolutionExplorer": false
 }

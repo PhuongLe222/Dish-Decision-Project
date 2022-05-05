@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="data_dishModelStoreContainer" CdmEntityContainer="data_dishEntities">
+    <EntitySetMapping Name="CTMAs">
+      <EntityTypeMapping TypeName="data_dishModel.CTMA">
+        <MappingFragment StoreEntitySet="CTMA">
+          <ScalarProperty Name="MaMonAn" ColumnName="MaMonAn" />
+          <ScalarProperty Name="MaNguyenLieu" ColumnName="MaNguyenLieu" />
+          <ScalarProperty Name="LieuLuong" ColumnName="LieuLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONANs">
+      <EntityTypeMapping TypeName="data_dishModel.MONAN">
+        <MappingFragment StoreEntitySet="MONAN">
+          <ScalarProperty Name="MaMonAn" ColumnName="MaMonAn" />
+          <ScalarProperty Name="TenMonAn" ColumnName="TenMonAn" />
+          <ScalarProperty Name="LoaiMonAn" ColumnName="LoaiMonAn" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="CachThucHien" ColumnName="CachThucHien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGUYENLIEUx">
+      <EntityTypeMapping TypeName="data_dishModel.NGUYENLIEU">
+        <MappingFragment StoreEntitySet="NGUYENLIEU">
+          <ScalarProperty Name="MaNguyenLieu" ColumnName="MaNguyenLieu" />
+          <ScalarProperty Name="TenNguyenLieu" ColumnName="TenNguyenLieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

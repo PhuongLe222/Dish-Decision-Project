@@ -19,9 +19,17 @@ namespace Dish_Decision_Project
     /// </summary>
     public partial class ChiTietMonAn : Window
     {
+        private String msg { get; set; }
+
         public ChiTietMonAn()
         {
             InitializeComponent();
         }
+        public ChiTietMonAn(String _msg)
+        {
+            InitializeComponent();
+            msg = _msg;
+        }
+
     }
 }

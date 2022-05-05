@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="data_dishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CTMA">
+    <Key>
+      <PropertyRef Name="MaMonAn" />
+      <PropertyRef Name="MaNguyenLieu" />
+    </Key>
+    <Property Name="MaMonAn" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="MaNguyenLieu" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="LieuLuong" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MONAN">
+    <Key>
+      <PropertyRef Name="MaMonAn" />
+    </Key>
+    <Property Name="MaMonAn" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="TenMonAn" Type="nvarchar" MaxLength="255" />
+    <Property Name="LoaiMonAn" Type="bit" Nullable="false" />
+    <Property Name="HinhAnh" Type="text" />
+    <Property Name="CachThucHien" Type="ntext" />
+  </EntityType>
+  <EntityType Name="NGUYENLIEU">
+    <Key>
+      <PropertyRef Name="MaNguyenLieu" />
+    </Key>
+    <Property Name="MaNguyenLieu" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="TenNguyenLieu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_CTMA_MONAN">
+    <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
+    <End Role="CTMA" Type="Self.CTMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONAN">
+        <PropertyRef Name="MaMonAn" />
+      </Principal>
+      <Dependent Role="CTMA">
+        <PropertyRef Name="MaMonAn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTMA_NGUYENLIEU">
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+    <End Role="CTMA" Type="Self.CTMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUYENLIEU">
+        <PropertyRef Name="MaNguyenLieu" />
+      </Principal>
+      <Dependent Role="CTMA">
+        <PropertyRef Name="MaNguyenLieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="data_dishModelStoreContainer">
+    <EntitySet Name="CTMA" EntityType="Self.CTMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONAN" EntityType="Self.MONAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUYENLIEU" EntityType="Self.NGUYENLIEU" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CTMA_MONAN" Association="Self.FK_CTMA_MONAN">
+      <End Role="MONAN" EntitySet="MONAN" />
+      <End Role="CTMA" EntitySet="CTMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTMA_NGUYENLIEU" Association="Self.FK_CTMA_NGUYENLIEU">
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEU" />
+      <End Role="CTMA" EntitySet="CTMA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
