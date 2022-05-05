@@ -24,5 +24,10 @@ namespace Dish_Decision_Project
         {
             InitializeComponent();
         }
+
+        private void optSoLuong_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
