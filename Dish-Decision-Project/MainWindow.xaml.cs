@@ -27,8 +27,39 @@ namespace Dish_Decision_Project
 
         private void optSoLuong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //MessageBox.Show(optSoLuong.SelectedItem.ToString());
+            string value = optSoLuong.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last();
+            int soluong = int.Parse(value.Split(new string[] { " " }, StringSplitOptions.None).First());
+            var textboxNL = new List<TextBox>();
+            textboxNL.Add(txtNguyenLieu1);
+            textboxNL.Add(txtNguyenLieu2);
+            textboxNL.Add(txtNguyenLieu3);
+            textboxNL.Add(txtNguyenLieu4);
+            textboxNL.Add(txtNguyenLieu5);
 
-        }
+            var lableNL = new List<TextBlock>();
+            lableNL.Add(txtNL1);
+            lableNL.Add(txtNL2);
+            lableNL.Add(txtNL3);
+            lableNL.Add(txtNL4);
+            lableNL.Add(txtNL5);
+
+            for (int i = 0; i < 5; i++)
+            {
+                if(i < soluong)
+                {
+                    textboxNL[i].Visibility = Visibility.Visible;
+                    lableNL[i].Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    textboxNL[i].Visibility = Visibility.Hidden;
+                    lableNL[i].Visibility = Visibility.Hidden;
+                }
+            }         
+          
+        } 
+            
 
         private void btnSearchNL_Click(object sender, RoutedEventArgs e)
         {
