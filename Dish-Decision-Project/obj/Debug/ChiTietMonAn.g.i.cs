@@ -118,6 +118,14 @@ namespace Dish_Decision_Project {
         
         #line 112 "..\..\ChiTietMonAn.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBlock txtNguyenLieu9;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 142 "..\..\ChiTietMonAn.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock txtLieuLuong1;
         
         #line default

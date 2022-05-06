@@ -14,72 +14,90 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <!--Thanh tìm kiếm/controlBar-->
-            <materialDesign:ColorZone
-            Background="Orange"
-            Mode="PrimaryMid"
-            Padding="16" Margin="1,0,-0.4,-20" Height="72">
-                <DockPanel>
-                    <StackPanel
-                    Orientation="Horizontal"
-                    materialDesign:RippleAssist.IsCentered="True">
-                        <materialDesign:Chip Content="HÔM NAY ĂN GÌ?">
-                            <materialDesign:Chip.Icon>
-                                <Image x:Name= "logo" Source="Resources/logofood.png" />
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>
-                        <materialDesign:ColorZone
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="212*"></ColumnDefinition>
+                <ColumnDefinition Width="480*"></ColumnDefinition>
+                <ColumnDefinition Width="101*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="Orange">
+                <materialDesign:Chip Content="HÔM NAY ĂN GÌ?" Height="Auto" Margin="10,18,0,20" Width="174" >
+                    <materialDesign:Chip.Icon>
+                        <Image  x:Name= "logo1" Source="C:\Users\Anh Thu\source\repos\Dish-Decision-Project\Dish-Decision-Project\Resources\logofood.png"  />
+                    </materialDesign:Chip.Icon>
+                </materialDesign:Chip>
+            </Grid>
+            <Grid Background="Orange" Grid.ColumnSpan="3" Margin="205,0,62.333,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.007"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <materialDesign:ColorZone
                         Background="Azure"
                         Mode="Standard"
                         Padding="8 4 8 4"
                         CornerRadius="2"
                         Panel.ZIndex="1"
-                        Margin="16 0 0 0"
-                        materialDesign:ShadowAssist.ShadowDepth="Depth1">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource MaterialDesignToolButton}">
-                                    <materialDesign:PackIcon
+                        Margin="16,10,10,0"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="50" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon
                                     Kind="Search"
                                     Opacity=".56" />
-                                </Button>
-                                <TextBox
+                        </Button>
+                        <TextBox
                                 x:Name="txtSearch"
                                 Grid.Column="1"
-                                Margin="8 0 0 0"
+                                Margin="8,9,10.333,5"
                                 materialDesign:HintAssist.Hint="Tìm kiếm món ăn "
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 BorderThickness="0"
                                 MinWidth="400"
-                                VerticalAlignment="Center" />
-                            </Grid>
-                        </materialDesign:ColorZone>
-                        <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
+                                VerticalAlignment="Center"  Height="28" />
+                    </Grid>
+                </materialDesign:ColorZone>
+            </Grid>
+            <Grid Grid.Column="2" Background="Orange" Margin="35,0,0.333,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="56*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
                         x:Name="btnSearchMA"
-                        Background="Black"                        
+                        Background="Black"
                         ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Margin="20 0 0 0"
-                        Width="auto"
-                        Height="40" Click="btnSearchMA_Click">
-                            <materialDesign:PackIcon
+                        Margin="10,7.333,10,8.667"
+                        Width="39"
+                        Height="40" Click="btnSearchMA_Click" RenderTransformOrigin="2.017,0.5" Grid.Row="1">
+                    <materialDesign:PackIcon
                             Kind="Magnify"
                             Height= "auto"
-                            Width="auto" 
+                            Width="auto"
                             Margin="5"
-                            VerticalAlignment="Center" 
-                        />
-                        </Button>
-                    </StackPanel>
-                </DockPanel>
-            </materialDesign:ColorZone>
+                            VerticalAlignment="Center" />
+                </Button>
+            </Grid>
         </Grid>
         <!-- Chi tiết món ăn-->
-        <Grid Grid.Row="1" Margin="0,30,-0.4,0">
-            <materialDesign:Card Margin="1,24,0,-134">
+        <Grid Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                
+                <materialDesign:Card>
                 <StackPanel>
                     <Grid Grid.Row="1">
                         <Grid.RowDefinitions>
@@ -87,46 +105,98 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" x:Name="txtTenMonAn" FontWeight="Bold" HorizontalAlignment="center" Margin="386,-21,385.6,220.8" Grid.RowSpan="2">
+                        <TextBlock Grid.Row="0" x:Name="txtTenMonAn"  
+                                   HorizontalAlignment="center"
+                                   Style="{StaticResource MaterialDesignHeadline4TextBlock}" 
+                                   Margin="10" 
+                                   Foreground="OrangeRed">
+                            Canh khổ qua nhồi thịt
                         </TextBlock>
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200*"></ColumnDefinition>
                                 <ColumnDefinition Width="197*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" Margin="8,24,8,-0.2" >
-                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
-                                    Nguyên liệu
+                            <StackPanel Grid.Column="0" Margin="60 24 8 0" >
+                                <TextBlock TextWrapping="Wrap" 
+                                           HorizontalAlignment="Left"
+                                           Margin="5"
+                                           Style="{StaticResource MaterialDesignButtonTextBlock}"
+                                           FontSize="18"
+                                           Foreground="DarkSlateGray"
+                                           Text=" NGUYÊN LIỆU">                                    
                                 </TextBlock>
                                 <Grid Grid.Row="0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <ListBox Name="ListTenNL" Grid.Column="0" Margin="5">
-                                        <TextBlock x:Name="txtNguyenLieu1" Text="Khổ qua"></TextBlock>
-                                        <TextBlock x:Name="txtNguyenLieu2" Text="Thịt bằm"></TextBlock>
-                                        <TextBlock x:Name="txtNguyenLieu3" Text="Nấm mèo"></TextBlock>
-                                    </ListBox>
-                                    <ListBox Name="ListLieuLuong" Grid.Column="1" Margin="5">
-                                        <TextBlock x:Name="txtLieuLuong1" Text="2 quả"></TextBlock>
-                                        <TextBlock x:Name="txtLieuLuong2" Text="200gr"></TextBlock>
-                                        <TextBlock x:Name="txtLieuLuong3" Text="100gr"></TextBlock>
-                                    </ListBox>
+                                    <StackPanel>
+                                        <StackPanel.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="FontStyle" Value="Normal"></Setter>
+                                                <Setter Property="Foreground" Value="Black"></Setter>
+                                                <Setter Property="FontSize" Value="14"></Setter>
+                                                <Setter Property="FontFamily" Value="Mangal"></Setter>
+                                            </Style>                                                  
+                                        </StackPanel.Resources>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <ListBox Grid.Column="0" Margin="30 5 5 5">
+                                                <TextBlock x:Name="txtNguyenLieu1" Text="Khổ qua"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu2" Text="Thịt bằm"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu3" Text="Nấm mèo"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu4" Text="Khổ qua"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu5" Text="Thịt bằm"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu6" Text="Nấm mèo"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu7" Text="Khổ qua"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu8" Text="Thịt bằm"></TextBlock>
+                                                <TextBlock x:Name="txtNguyenLieu9" Text="Nấm mèo"></TextBlock>
+                                            </ListBox>
+                                            <ListBox Grid.Column="1" Margin="5">
+                                                <TextBlock x:Name="txtLieuLuong1" Text="2 quả"></TextBlock>
+                                                <TextBlock x:Name="txtLieuLuong2" Text="200gr"></TextBlock>
+                                                <TextBlock x:Name="txtLieuLuong3" Text="100gr"></TextBlock>
+                                            </ListBox>
+                                        </Grid>
+                                    </StackPanel>
+                                    
                                 </Grid>
                             </StackPanel>
-                            <Grid Grid.Column="1" Margin="8,24,7.6,-0.2">
-                                <Image x:Name="HinhAnh" Source="https://cdn.tgdd.vn/Files/2019/01/03/1142366/bi-quyet-nau-canh-kho-qua-don-thit-khong-bao-gio-bi-dang-202107301211370247.jpg" Height="auto" Stretch="Uniform" />
+                            <Grid Grid.Column="1" Margin="8 24 8 5" >
+                                <Image x:Name="HinhAnh" Source="https://cdn.tgdd.vn/Files/2019/01/03/1142366/bi-quyet-nau-canh-kho-qua-don-thit-khong-bao-gio-bi-dang-202107301211370247.jpg" Height="200" Stretch="Uniform" />
                             </Grid>
                         </Grid>
-                        <StackPanel Grid.Row="2" Margin="10">
-                            <TextBlock HorizontalAlignment="Center"> Cách thực hiện</TextBlock>
-                            <TextBlock x:Name="txtCachThucHien" TextWrapping="Wrap" Margin="0,0,-0.4,0"><Run Text="1. Sơ chế nguyên liệu Khổ qua mua về bạn rửa sạch, cắt làm đôi, dùng muỗng lấy sạch phần ruột bên trong. Để khổ qua bớt đắng, bạn ngâm khổ qua trong nước lạnh 10 - 15 phút, sau đó vớt ra để ráo. Nấm mèo ngâm nở, rửa sạch, bỏ phần chân rồi cắt nhỏ. Đối với tỏi và hành tím, bạn lột sạch vỏ, băm nhỏ. Hành ngò bỏ gốc, rửa sạch. Cắt hành lá thật nhuyễn để trang trí."/><LineBreak /><Run Text="2. Ướp nhân và nhồi khổ qua Trộn đều thịt với nấm mèo, hành tím, tỏi băm, 1 quả trứng vịt và các loại gia vị gồm 1 muỗng cà phê đường, 1 muỗng cà phê tiêu, 1 muỗng cà phê hạt nêm. Để yên 10 - 15 phút cho thịt thấm đều gia vị. Lấy một lượng nhân vừa đủ, dùng muỗng cho từ từ vào ruột khổ qua, ấn nhẹ nhàng cho nhân thật chặt."/><LineBreak /><Run Text="3. Nấu khổ qua Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé. Nấu khoảng 40 phút thì khổ qua chín mềm, tắt bếp. Bạn cho canh ra tô, rắc thêm hành ngò và 1 ít tiêu. Bạn có thể đợi cho canh nguội bớt 1 xíu rồi mới thưởng thức, khi này canh sẽ không còn đắng nữa nhé."/></TextBlock>
+                        <StackPanel Grid.Row="2" Margin="0 5 0 30">
+                            <TextBlock 
+                                       TextWrapping="Wrap" 
+                                       HorizontalAlignment="Left"
+                                       Margin="60 0 10 10"
+                                       Style="{StaticResource MaterialDesignButtonTextBlock}"
+                                       FontSize="18"
+                                       Foreground="DarkSlateGray"                                                                  
+                                       Text="CÁCH THỰC HIỆN">                                 
+                            </TextBlock>
+                            <TextBlock x:Name="txtCachThucHien" 
+                                       TextWrapping="Wrap" 
+                                       FontFamily="Mangal"
+                                       FontSize="14"
+                                       Foreground="Black"
+                                       Margin="5"                                       
+                                       Width="1000"                                       
+                                       Text="1. Sơ chế nguyên liệu Khổ qua mua về bạn rửa sạch, cắt làm đôi, dùng muỗng lấy sạch phần ruột bên trong. Để khổ qua bớt đắng, bạn ngâm khổ qua trong nước lạnh 10 - 15 phút, sau đó vớt ra để ráo. Nấm mèo ngâm nở, rửa sạch, bỏ phần chân rồi cắt nhỏ. Đối với tỏi và hành tím, bạn lột sạch vỏ, băm nhỏ. Hành ngò bỏ gốc, rửa sạch. Cắt hành lá thật nhuyễn để trang trí. 2. Ướp nhân và nhồi khổ qua Trộn đều thịt với nấm mèo, hành tím, tỏi băm, 1 quả trứng vịt và các loại gia vị gồm 1 muỗng cà phê đường, 1 muỗng cà phê tiêu, 1 muỗng cà phê hạt nêm. Để yên 10 - 15 phút cho thịt thấm đều gia vị. Lấy một lượng nhân vừa đủ, dùng muỗng cho từ từ vào ruột khổ qua, ấn nhẹ nhàng cho nhân thật chặt.\n 3. Nấu khổ qua Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé. Nấu khoảng 40 phút thì khổ qua chín mềm, tắt bếp. Bạn cho canh ra tô, rắc thêm hành ngò và 1 ít tiêu. Bạn có thể đợi cho canh nguội bớt 1 xíu rồi mới thưởng thức, khi này canh sẽ không còn đắng nữa nhé.1. Sơ chế nguyên liệu Khổ qua mua về bạn rửa sạch, cắt làm đôi, dùng muỗng lấy sạch phần ruột bên trong. Để khổ qua bớt đắng, bạn ngâm khổ qua trong nước lạnh 10 - 15 phút, sau đó vớt ra để ráo. Nấm mèo ngâm nở, rửa sạch, bỏ phần chân rồi cắt nhỏ. Đối với tỏi và hành tím, bạn lột sạch vỏ, băm nhỏ. Hành ngò bỏ gốc, rửa sạch. Cắt hành lá thật nhuyễn để trang trí. /n 2. Ướp nhân và nhồi khổ qua Trộn đều thịt với nấm mèo, hành tím, tỏi băm, 1 quả trứng vịt và các loại gia vị gồm 1 muỗng cà phê đường, 1 muỗng cà phê tiêu, 1 muỗng cà phê hạt nêm. Để yên 10 - 15 phút cho thịt thấm đều gia vị. Lấy một lượng nhân vừa đủ, dùng muỗng cho từ từ vào ruột khổ qua, ấn nhẹ nhàng cho nhân thật chặt. 3. Nấu khổ qua Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé. Nấu khoảng 40 phút thì khổ qua chín mềm, tắt bếp. Bạn cho canh ra tô, rắc thêm hành ngò và 1 ít tiêu. Bạn có thể đợi cho canh nguội bớt 1 xíu rồi mới thưởng thức, khi này canh sẽ không còn đắng nữa nhé.">
+                            </TextBlock>
+                                3. Nấu khổ qua
+    Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé.
+
+    Nấu khoảng 40 phút thì khổ qua chín mềm, tắt bếp. Bạn cho canh ra tô, rắc thêm hành ngò và 1 ít tiêu. Bạn có thể đợi cho canh nguội bớt 1 xíu rồi mới thưởng thức, khi này canh sẽ không còn đắng nữa nhé.
+                            </TextBlock>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
             </materialDesign:Card>
-
+                
+            </ScrollViewer>
+            
         </Grid>
     </Grid>
 

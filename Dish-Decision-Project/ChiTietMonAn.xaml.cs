@@ -36,6 +36,15 @@ namespace Dish_Decision_Project
             mainScreen = _mainScreen;
             HienThiMonAN();
         }
+        private void btnSearchMA_Click(object sender, RoutedEventArgs e)
+        {
+            // Lấy dữ liệu từ front-end
+            String ten_monan = txtSearch.Text;
+
+            // Truyền tham số và mở trang chi tiết món ăn
+            ChiTietMonAn mon_an = new ChiTietMonAn(ten_monan);
+            mon_an.Show();
+            this.Close();
 
         private void HienThiMonAN()
         {

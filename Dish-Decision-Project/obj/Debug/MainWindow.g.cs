@@ -44,15 +44,15 @@ namespace Dish_Decision_Project {
     public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 34 "..\..\MainWindow.xaml"
+        #line 32 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Image logo;
+        internal System.Windows.Controls.Image logo1;
         
         #line default
         #line hidden
         
         
-        #line 57 "..\..\MainWindow.xaml"
+        #line 69 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSearch;
         
@@ -60,7 +60,7 @@ namespace Dish_Decision_Project {
         #line hidden
         
         
-        #line 68 "..\..\MainWindow.xaml"
+        #line 87 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnSearchMA;
         
@@ -258,7 +258,7 @@ namespace Dish_Decision_Project {
             switch (connectionId)
             {
             case 1:
-            this.logo = ((System.Windows.Controls.Image)(target));
+            this.logo1 = ((System.Windows.Controls.Image)(target));
             return;
             case 2:
             this.txtSearch = ((System.Windows.Controls.TextBox)(target));

@@ -80,3 +80,40 @@ C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\E
 C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\EntityFramework.xml
 C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\Dish-Decision-Project_Content.g.cs
+C:\Users\My PC\Source\Repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\EntityFramework.dll
+C:\Users\My PC\Source\Repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\My PC\Source\Repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\EntityFramework.xml
+C:\Users\My PC\Source\Repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\My PC\Source\Repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\Dish-Decision-Project_Content.g.cs
+C:\Users\My PC\Source\Repos\Dish-Decision-Project\Dish-Decision-Project\obj\Debug\ChiTietMonAn.baml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\Dish-Decision-Project.exe.config
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\Dish-Decision-Project.exe
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\Dish-Decision-Project.pdb
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\EntityFramework.dll
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\MaterialDesignColors.dll
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\EntityFramework.xml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.csproj.AssemblyReference.cache
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\ChiTietMonAn.g.cs
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\MainWindow.g.cs
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\App.g.cs
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project_Content.g.cs
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project_MarkupCompile.cache
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project_MarkupCompile.lref
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\App.baml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\ChiTietMonAn.baml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\MainWindow.baml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.g.resources
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish_Decision_Project.Properties.Resources.resources
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.csproj.GenerateResource.cache
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.csproj.CoreCompileInputs.cache
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.csproj.CopyComplete
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.exe
+C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.pdb
