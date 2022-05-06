@@ -67,11 +67,13 @@
                         <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
                         x:Name="btnSearchMA"
                         Background="Black"
+                        Command="{Binding SearchCommand}"
+                        CommandParameter="{Binding ElementName= MainWindow}"
                         ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Margin="20 0 0 0"
                         Width="auto"
-                        Height="40">
+                        Height="40" Click="btnSearchMA_Click">
                             <materialDesign:PackIcon
                             Kind="Magnify"
                             Height= "auto"
@@ -120,7 +122,7 @@
                 ToolTip="Resource name: MaterialDesignRaisedButton"                
                 Content="Tìm kiếm"
                 Background="Black"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="90" />
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="50" Width="90" Click="btnSearchNL_Click" />
             </StackPanel>
             
                 <StackPanel Grid.Column="0" Margin="37,145,202,10" Height="349">
@@ -133,7 +135,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    <TextBlock x:Name="txtNL1" VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
                     Nhập nguyên liệu thứ 1:
                     </TextBlock>
                     <TextBox
@@ -165,7 +167,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    <TextBlock x:Name="txtNL2" VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
                     Nhập nguyên liệu thứ 2:
                     </TextBlock>
                     <TextBox
@@ -197,7 +199,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    <TextBlock x:Name="txtNL3" VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
                     Nhập nguyên liệu thứ 3:
                     </TextBlock>
                     <TextBox
@@ -229,7 +231,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    <TextBlock x:Name="txtNL4" VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
                     Nhập nguyên liệu thứ 4:
                     </TextBlock>
                     <TextBox
@@ -261,7 +263,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <TextBlock VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
+                    <TextBlock x:Name="txtNL5" VerticalAlignment="Center" Height="30" Margin="0,20,388.667,19">
                     Nhập nguyên liệu thứ 5:
                     </TextBlock>
                     <TextBox

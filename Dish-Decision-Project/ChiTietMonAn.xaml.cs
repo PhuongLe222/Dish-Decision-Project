@@ -19,9 +19,27 @@ namespace Dish_Decision_Project
     /// </summary>
     public partial class ChiTietMonAn : Window
     {
+        private String msg { get; set; }
+
         public ChiTietMonAn()
         {
             InitializeComponent();
+        }
+        public ChiTietMonAn(String _msg)
+        {
+            InitializeComponent();
+            msg = _msg;
+        }
+        private void btnSearchMA_Click(object sender, RoutedEventArgs e)
+        {
+            // Lấy dữ liệu từ front-end
+            String ten_monan = txtSearch.Text;
+
+            // Truyền tham số và mở trang chi tiết món ăn
+            ChiTietMonAn mon_an = new ChiTietMonAn(ten_monan);
+            mon_an.Show();
+            this.Close();
+
         }
     }
 }

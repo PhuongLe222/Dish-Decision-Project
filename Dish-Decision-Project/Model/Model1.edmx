@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="data_dishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CTMA">
+          <Key>
+            <PropertyRef Name="MaMonAn" />
+            <PropertyRef Name="MaNguyenLieu" />
+          </Key>
+          <Property Name="MaMonAn" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="MaNguyenLieu" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="LieuLuong" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MONAN">
+          <Key>
+            <PropertyRef Name="MaMonAn" />
+          </Key>
+          <Property Name="MaMonAn" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="TenMonAn" Type="nvarchar" MaxLength="255" />
+          <Property Name="LoaiMonAn" Type="bit" Nullable="false" />
+          <Property Name="HinhAnh" Type="text" />
+          <Property Name="CachThucHien" Type="ntext" />
+        </EntityType>
+        <EntityType Name="NGUYENLIEU">
+          <Key>
+            <PropertyRef Name="MaNguyenLieu" />
+          </Key>
+          <Property Name="MaNguyenLieu" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="TenNguyenLieu" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_CTMA_MONAN">
+          <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
+          <End Role="CTMA" Type="Self.CTMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONAN">
+              <PropertyRef Name="MaMonAn" />
+            </Principal>
+            <Dependent Role="CTMA">
+              <PropertyRef Name="MaMonAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTMA_NGUYENLIEU">
+          <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+          <End Role="CTMA" Type="Self.CTMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUYENLIEU">
+              <PropertyRef Name="MaNguyenLieu" />
+            </Principal>
+            <Dependent Role="CTMA">
+              <PropertyRef Name="MaNguyenLieu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="data_dishModelStoreContainer">
+          <EntitySet Name="CTMA" EntityType="Self.CTMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MONAN" EntityType="Self.MONAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NGUYENLIEU" EntityType="Self.NGUYENLIEU" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CTMA_MONAN" Association="Self.FK_CTMA_MONAN">
+            <End Role="MONAN" EntitySet="MONAN" />
+            <End Role="CTMA" EntitySet="CTMA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTMA_NGUYENLIEU" Association="Self.FK_CTMA_NGUYENLIEU">
+            <End Role="NGUYENLIEU" EntitySet="NGUYENLIEU" />
+            <End Role="CTMA" EntitySet="CTMA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="data_dishModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CTMA">
+          <Key>
+            <PropertyRef Name="MaMonAn" />
+            <PropertyRef Name="MaNguyenLieu" />
+          </Key>
+          <Property Name="MaMonAn" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaNguyenLieu" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LieuLuong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MONAN" Relationship="Self.FK_CTMA_MONAN" FromRole="CTMA" ToRole="MONAN" />
+          <NavigationProperty Name="NGUYENLIEU" Relationship="Self.FK_CTMA_NGUYENLIEU" FromRole="CTMA" ToRole="NGUYENLIEU" />
+        </EntityType>
+        <EntityType Name="MONAN">
+          <Key>
+            <PropertyRef Name="MaMonAn" />
+          </Key>
+          <Property Name="MaMonAn" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenMonAn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiMonAn" Type="Boolean" Nullable="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CachThucHien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTMAs" Relationship="Self.FK_CTMA_MONAN" FromRole="MONAN" ToRole="CTMA" />
+        </EntityType>
+        <EntityType Name="NGUYENLIEU">
+          <Key>
+            <PropertyRef Name="MaNguyenLieu" />
+          </Key>
+          <Property Name="MaNguyenLieu" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNguyenLieu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTMAs" Relationship="Self.FK_CTMA_NGUYENLIEU" FromRole="NGUYENLIEU" ToRole="CTMA" />
+        </EntityType>
+        <Association Name="FK_CTMA_MONAN">
+          <End Role="MONAN" Type="Self.MONAN" Multiplicity="1" />
+          <End Role="CTMA" Type="Self.CTMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONAN">
+              <PropertyRef Name="MaMonAn" />
+            </Principal>
+            <Dependent Role="CTMA">
+              <PropertyRef Name="MaMonAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTMA_NGUYENLIEU">
+          <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+          <End Role="CTMA" Type="Self.CTMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUYENLIEU">
+              <PropertyRef Name="MaNguyenLieu" />
+            </Principal>
+            <Dependent Role="CTMA">
+              <PropertyRef Name="MaNguyenLieu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="data_dishEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CTMAs" EntityType="Self.CTMA" />
+          <EntitySet Name="MONANs" EntityType="Self.MONAN" />
+          <EntitySet Name="NGUYENLIEUx" EntityType="Self.NGUYENLIEU" />
+          <AssociationSet Name="FK_CTMA_MONAN" Association="Self.FK_CTMA_MONAN">
+            <End Role="MONAN" EntitySet="MONANs" />
+            <End Role="CTMA" EntitySet="CTMAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTMA_NGUYENLIEU" Association="Self.FK_CTMA_NGUYENLIEU">
+            <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+            <End Role="CTMA" EntitySet="CTMAs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="data_dishModelStoreContainer" CdmEntityContainer="data_dishEntities">
+          <EntitySetMapping Name="CTMAs">
+            <EntityTypeMapping TypeName="data_dishModel.CTMA">
+              <MappingFragment StoreEntitySet="CTMA">
+                <ScalarProperty Name="MaMonAn" ColumnName="MaMonAn" />
+                <ScalarProperty Name="MaNguyenLieu" ColumnName="MaNguyenLieu" />
+                <ScalarProperty Name="LieuLuong" ColumnName="LieuLuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MONANs">
+            <EntityTypeMapping TypeName="data_dishModel.MONAN">
+              <MappingFragment StoreEntitySet="MONAN">
+                <ScalarProperty Name="MaMonAn" ColumnName="MaMonAn" />
+                <ScalarProperty Name="TenMonAn" ColumnName="TenMonAn" />
+                <ScalarProperty Name="LoaiMonAn" ColumnName="LoaiMonAn" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="CachThucHien" ColumnName="CachThucHien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NGUYENLIEUx">
+            <EntityTypeMapping TypeName="data_dishModel.NGUYENLIEU">
+              <MappingFragment StoreEntitySet="NGUYENLIEU">
+                <ScalarProperty Name="MaNguyenLieu" ColumnName="MaNguyenLieu" />
+                <ScalarProperty Name="TenNguyenLieu" ColumnName="TenNguyenLieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
