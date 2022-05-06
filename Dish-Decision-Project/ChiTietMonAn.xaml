@@ -14,70 +14,84 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <!--Thanh tìm kiếm/controlBar-->
-            <materialDesign:ColorZone
-            Background="Orange"
-            Mode="PrimaryMid"
-            Padding="16">
-                <DockPanel>
-                    <StackPanel
-                    Orientation="Horizontal"
-                    materialDesign:RippleAssist.IsCentered="True">
-                        <materialDesign:Chip Content="HÔM NAY ĂN GÌ?">
-                            <materialDesign:Chip.Icon>
-                                <Image x:Name= "logo" Source="Resources/logofood.png" />
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>
-                        <materialDesign:ColorZone
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="212*"></ColumnDefinition>
+                <ColumnDefinition Width="480*"></ColumnDefinition>
+                <ColumnDefinition Width="101*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="Orange">
+                <materialDesign:Chip Content="HÔM NAY ĂN GÌ?" Height="Auto" Margin="10,18,0,20" Width="174" >
+                    <materialDesign:Chip.Icon>
+                        <Image  x:Name= "logo1" Source="C:\Users\Anh Thu\source\repos\Dish-Decision-Project\Dish-Decision-Project\Resources\logofood.png"  />
+                    </materialDesign:Chip.Icon>
+                </materialDesign:Chip>
+            </Grid>
+            <Grid Background="Orange" Grid.ColumnSpan="3" Margin="205,0,62.333,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.007"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <materialDesign:ColorZone
                         Background="Azure"
                         Mode="Standard"
                         Padding="8 4 8 4"
                         CornerRadius="2"
                         Panel.ZIndex="1"
-                        Margin="16 0 0 0"
-                        materialDesign:ShadowAssist.ShadowDepth="Depth1">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource MaterialDesignToolButton}">
-                                    <materialDesign:PackIcon
+                        Margin="16,10,10,0"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="50" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon
                                     Kind="Search"
                                     Opacity=".56" />
-                                </Button>
-                                <TextBox
+                        </Button>
+                        <TextBox
                                 x:Name="txtSearch"
                                 Grid.Column="1"
-                                Margin="8 0 0 0"
+                                Margin="8,9,10.333,5"
                                 materialDesign:HintAssist.Hint="Tìm kiếm món ăn "
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 BorderThickness="0"
                                 MinWidth="400"
-                                VerticalAlignment="Center" />
-                            </Grid>
-                        </materialDesign:ColorZone>
-                        <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
+                                VerticalAlignment="Center"  Height="28" />
+                    </Grid>
+                </materialDesign:ColorZone>
+            </Grid>
+            <Grid Grid.Column="2" Background="Orange" Margin="35,0,0.333,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="56*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
                         x:Name="btnSearchMA"
                         Background="Black"
-                        Command="{Binding SearchCommand}"
-                        CommandParameter="{Binding ElementName= MainWindow}"
                         ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Margin="20 0 0 0"
-                        Width="auto"
-                        Height="40" Click="btnSearchMA_Click">
-                            <materialDesign:PackIcon
+                        Margin="10,7.333,10,8.667"
+                        Width="39"
+                        Height="40" Click="btnSearchMA_Click" RenderTransformOrigin="2.017,0.5" Grid.Row="1">
+                    <materialDesign:PackIcon
                             Kind="Magnify"
                             Height= "auto"
-                            Width="auto" 
+                            Width="auto"
                             Margin="5"
-                            VerticalAlignment="Center" 
-                        />
-                        </Button>
-                    </StackPanel>
-                </DockPanel>
-            </materialDesign:ColorZone>
+                            VerticalAlignment="Center" />
+                </Button>
+            </Grid>
         </Grid>
         <!-- Chi tiết món ăn-->
         <Grid Grid.Row="1">
