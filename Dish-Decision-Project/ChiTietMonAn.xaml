@@ -127,7 +127,7 @@
                                                 <ColumnDefinition></ColumnDefinition>
                                                 <ColumnDefinition></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
-                                            <ListBox Grid.Column="0" Margin="5">
+                                            <ListBox Grid.Column="0" Margin="30 5 5 5">
                                                 <TextBlock x:Name="txtNguyenLieu1" Text="Khổ qua"></TextBlock>
                                                 <TextBlock x:Name="txtNguyenLieu2" Text="Thịt bằm"></TextBlock>
                                                 <TextBlock x:Name="txtNguyenLieu3" Text="Nấm mèo"></TextBlock>
@@ -152,7 +152,7 @@
                                 <Image x:Name="HinhAnh" Source="https://cdn.tgdd.vn/Files/2019/01/03/1142366/bi-quyet-nau-canh-kho-qua-don-thit-khong-bao-gio-bi-dang-202107301211370247.jpg" Height="200" Stretch="Uniform" />
                             </Grid>
                         </Grid>
-                        <StackPanel Grid.Row="2" Margin="0 5 0 0">
+                        <StackPanel Grid.Row="2" Margin="0 5 0 30">
                             <TextBlock 
                                        TextWrapping="Wrap" 
                                        HorizontalAlignment="Left"
