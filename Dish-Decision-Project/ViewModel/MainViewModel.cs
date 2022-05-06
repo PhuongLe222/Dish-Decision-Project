@@ -9,6 +9,7 @@ namespace Dish_Decision_Project.ViewModel
 {
     public class MainViewModel: BaseViewModel
     {
-       
+        
     }
+    
 }

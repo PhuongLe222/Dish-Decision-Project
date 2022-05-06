@@ -66,9 +66,7 @@
                         </materialDesign:ColorZone>
                         <Button Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
                         x:Name="btnSearchMA"
-                        Background="Black"
-                        Command="{Binding SearchCommand}"
-                        CommandParameter="{Binding ElementName= MainWindow}"
+                        Background="Black"                        
                         ToolTip="MaterialDesignFloatingActionSecondaryDarkButton"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                         Margin="20 0 0 0"
