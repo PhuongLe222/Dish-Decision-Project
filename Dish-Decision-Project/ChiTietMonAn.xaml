@@ -141,7 +141,7 @@
                                                 <ColumnDefinition></ColumnDefinition>
                                                 <ColumnDefinition></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
-                                            <ListBox Grid.Column="0" Margin="30 5 5 5">
+                                            <ListBox Name="ListTenNL" Grid.Column="0" Margin="30 5 5 5">
                                                 <TextBlock x:Name="txtNguyenLieu1" Text="Khổ qua"></TextBlock>
                                                 <TextBlock x:Name="txtNguyenLieu2" Text="Thịt bằm"></TextBlock>
                                                 <TextBlock x:Name="txtNguyenLieu3" Text="Nấm mèo"></TextBlock>
@@ -152,7 +152,7 @@
                                                 <TextBlock x:Name="txtNguyenLieu8" Text="Thịt bằm"></TextBlock>
                                                 <TextBlock x:Name="txtNguyenLieu9" Text="Nấm mèo"></TextBlock>
                                             </ListBox>
-                                            <ListBox Grid.Column="1" Margin="5">
+                                            <ListBox Name="ListLieuLuong" Grid.Column="1" Margin="5">
                                                 <TextBlock x:Name="txtLieuLuong1" Text="2 quả"></TextBlock>
                                                 <TextBlock x:Name="txtLieuLuong2" Text="200gr"></TextBlock>
                                                 <TextBlock x:Name="txtLieuLuong3" Text="100gr"></TextBlock>
@@ -184,7 +184,7 @@
                                        Margin="5"                                       
                                        Width="1000"                                       
                                        Text="1. Sơ chế nguyên liệu Khổ qua mua về bạn rửa sạch, cắt làm đôi, dùng muỗng lấy sạch phần ruột bên trong. Để khổ qua bớt đắng, bạn ngâm khổ qua trong nước lạnh 10 - 15 phút, sau đó vớt ra để ráo. Nấm mèo ngâm nở, rửa sạch, bỏ phần chân rồi cắt nhỏ. Đối với tỏi và hành tím, bạn lột sạch vỏ, băm nhỏ. Hành ngò bỏ gốc, rửa sạch. Cắt hành lá thật nhuyễn để trang trí. 2. Ướp nhân và nhồi khổ qua Trộn đều thịt với nấm mèo, hành tím, tỏi băm, 1 quả trứng vịt và các loại gia vị gồm 1 muỗng cà phê đường, 1 muỗng cà phê tiêu, 1 muỗng cà phê hạt nêm. Để yên 10 - 15 phút cho thịt thấm đều gia vị. Lấy một lượng nhân vừa đủ, dùng muỗng cho từ từ vào ruột khổ qua, ấn nhẹ nhàng cho nhân thật chặt.\n 3. Nấu khổ qua Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé. Nấu khoảng 40 phút thì khổ qua chín mềm, tắt bếp. Bạn cho canh ra tô, rắc thêm hành ngò và 1 ít tiêu. Bạn có thể đợi cho canh nguội bớt 1 xíu rồi mới thưởng thức, khi này canh sẽ không còn đắng nữa nhé.1. Sơ chế nguyên liệu Khổ qua mua về bạn rửa sạch, cắt làm đôi, dùng muỗng lấy sạch phần ruột bên trong. Để khổ qua bớt đắng, bạn ngâm khổ qua trong nước lạnh 10 - 15 phút, sau đó vớt ra để ráo. Nấm mèo ngâm nở, rửa sạch, bỏ phần chân rồi cắt nhỏ. Đối với tỏi và hành tím, bạn lột sạch vỏ, băm nhỏ. Hành ngò bỏ gốc, rửa sạch. Cắt hành lá thật nhuyễn để trang trí. /n 2. Ướp nhân và nhồi khổ qua Trộn đều thịt với nấm mèo, hành tím, tỏi băm, 1 quả trứng vịt và các loại gia vị gồm 1 muỗng cà phê đường, 1 muỗng cà phê tiêu, 1 muỗng cà phê hạt nêm. Để yên 10 - 15 phút cho thịt thấm đều gia vị. Lấy một lượng nhân vừa đủ, dùng muỗng cho từ từ vào ruột khổ qua, ấn nhẹ nhàng cho nhân thật chặt. 3. Nấu khổ qua Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé. Nấu khoảng 40 phút thì khổ qua chín mềm, tắt bếp. Bạn cho canh ra tô, rắc thêm hành ngò và 1 ít tiêu. Bạn có thể đợi cho canh nguội bớt 1 xíu rồi mới thưởng thức, khi này canh sẽ không còn đắng nữa nhé.">
-                            </TextBlock>
+                            
                                 3. Nấu khổ qua
     Bắc nồi lên bếp, cho 800ml nước dùng và 1 muỗng cà phê muối, khi nước sôi cho khổ qua vào và nêm thêm 2 muỗng cà phê hạt nêm. Bạn có thể gia giảm tùy khẩu vị gia đình mình nhé.
 

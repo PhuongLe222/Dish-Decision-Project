@@ -117,3 +117,31 @@ C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Di
 C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.csproj.CopyComplete
 C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.exe
 C:\Users\Anh Thu\source\repos\Hệ hỗ trợ\Dish-Decision-Project\obj\Debug\Dish-Decision-Project.pdb
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.dll.config
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Controls.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.MachineLearning.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Math.Core.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Math.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Statistics.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\ZedGraph.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Controls.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.MachineLearning.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Math.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Math.Core.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\Accord.Statistics.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\ZedGraph.xml
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\PC\source\repos\Dish-Decision-Project\Dish-Decision-Project\bin\Debug\zh-tw\ZedGraph.resources.dll
