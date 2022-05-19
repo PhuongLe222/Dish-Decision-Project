@@ -22,10 +22,10 @@ namespace Dish_Decision_Project.Model
                 _ins = value;
             }
         }
-        public data_dishEntities DB { get; set; }
+        public data_dishEntities1 DB { get; set; }
         private DataProvider()
         {
-            DB = new data_dishEntities();
+            DB = new data_dishEntities1();
         }
 
     }

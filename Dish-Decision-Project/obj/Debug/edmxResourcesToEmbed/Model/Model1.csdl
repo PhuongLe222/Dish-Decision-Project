@@ -54,7 +54,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="data_dishEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="data_dishEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CTMAs" EntityType="Self.CTMA" />
     <EntitySet Name="MONANs" EntityType="Self.MONAN" />
     <EntitySet Name="NGUYENLIEUx" EntityType="Self.NGUYENLIEU" />

@@ -31,7 +31,7 @@
                     materialDesign:RippleAssist.IsCentered="True">
                         <materialDesign:Chip Content="HÔM NAY ĂN GÌ?">
                             <materialDesign:Chip.Icon>
-                                <Image x:Name= "logo" Source="Resources/logofood.png" />
+                                <Image x:Name= "logo" Source="C:\Users\Anh Thu\source\repos\Dish-Decision-Project\Dish-Decision-Project\Resources/logofood.png" />
                             </materialDesign:Chip.Icon>
                         </materialDesign:Chip>
                         <materialDesign:ColorZone

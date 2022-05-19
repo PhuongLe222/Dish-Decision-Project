@@ -13,10 +13,10 @@ namespace Dish_Decision_Project.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class data_dishEntities : DbContext
+    public partial class data_dishEntities1 : DbContext
     {
-        public data_dishEntities()
-            : base("name=data_dishEntities")
+        public data_dishEntities1()
+            : base("name=data_dishEntities1")
         {
         }
     

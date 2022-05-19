@@ -42,7 +42,7 @@ namespace Dish_Decision_Project
             mon_an = null;
             trainModel();
         }
-
+        
         private void optSoLuong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //MessageBox.Show(optSoLuong.SelectedItem.ToString());
@@ -85,12 +85,11 @@ namespace Dish_Decision_Project
             String num_nguyenlieu = optSoLuong.Text;
             String type_nguyenlieu = optLoaiMonAn.Text;
 
-            string nguyenlieu1 = txtNguyenLieu1.Text;
-            string nguyenlieu2 = txtNguyenLieu2.Text;
-            string nguyenlieu3 = txtNguyenLieu3.Text;
-            string nguyenlieu4 = txtNguyenLieu4.Text;
-            string nguyenlieu5 = txtNguyenLieu5.Text;
-
+            string nguyenlieu1 = DataProvider.Ins.DB.NGUYENLIEUx.Where(p => p.TenNguyenLieu == txtNguyenLieu1.Text).Select(p => p.MaNguyenLieu).FirstOrDefault();
+            string nguyenlieu2 = DataProvider.Ins.DB.NGUYENLIEUx.Where(p => p.TenNguyenLieu == txtNguyenLieu2.Text).Select(p => p.MaNguyenLieu).FirstOrDefault();
+            string nguyenlieu3 = DataProvider.Ins.DB.NGUYENLIEUx.Where(p => p.TenNguyenLieu == txtNguyenLieu3.Text).Select(p => p.MaNguyenLieu).FirstOrDefault();
+            string nguyenlieu4 = DataProvider.Ins.DB.NGUYENLIEUx.Where(p => p.TenNguyenLieu == txtNguyenLieu4.Text).Select(p => p.MaNguyenLieu).FirstOrDefault();
+            string nguyenlieu5 = DataProvider.Ins.DB.NGUYENLIEUx.Where(p => p.TenNguyenLieu == txtNguyenLieu5.Text).Select(p => p.MaNguyenLieu).FirstOrDefault();
 
             //MessageBox.Show(
             //    "Số lượng nguyên liệu: " + num_nguyenlieu + "\n" +
@@ -105,9 +104,11 @@ namespace Dish_Decision_Project
                 recommendMonAn = decide("False", nguyenlieu1, nguyenlieu2, nguyenlieu3, nguyenlieu4, nguyenlieu5);
 
             // todo: cần một hàm để convert từ MaMonAn -> TenMonAn;
-
-            mon_an = new ChiTietMonAn(this, recommendMonAn.ToString());           
-            mon_an.Show();
+            if (recommendMonAn != "")
+            {
+                mon_an = new ChiTietMonAn(this, recommendMonAn.ToString());
+                mon_an.Show();
+            }            
         }
 
 
@@ -136,8 +137,11 @@ namespace Dish_Decision_Project
         private string decide(string loaiMonAn, string NgLieuChinh1, string NgLieuChinh2, string NgLieuPhu1, string NgLieuPhu2, string NgLieuPhu3)
         {
             // Thử nghiệm
-            int[] query = codebook.Transform(new[,]
+            string answer = "";
+            try
             {
+                int[] query = codebook.Transform(new[,]
+                            {
                 { "LoaiMonAn",         loaiMonAn  },
                 { "NguyenLieuChinh1",  NgLieuChinh1},
                 { "NguyenLieuChinh2",  NgLieuChinh2},
@@ -146,9 +150,13 @@ namespace Dish_Decision_Project
                 { "NguyenLieuPhu3",    NgLieuPhu3},
 
             });
-
-            int predicted = tree.Decide(query);
-            string answer = codebook.Revert("MaMonAn", predicted);
+                int predicted = tree.Decide(query);
+                answer = codebook.Revert("MaMonAn", predicted);
+            }
+            catch
+            {
+                MessageBox.Show("Không thể tìm thấy món ăn phù hợp với nguyên liệu này");
+            }
             //MessageBox.Show(answer);
             return answer;
         }
@@ -162,7 +170,7 @@ namespace Dish_Decision_Project
             SqlDataReader sqlDataReader;
             
 
-            connetionString = @"Data Source=TRANTRAN;Initial Catalog=DecisionTree;User ID=user;Password=1234";
+            connetionString = @"Data Source=DESKTOP-NUCL6B0\THUNGO2312;Initial Catalog=DecisionTree;User ID=sa;Password=12345";
             cnn = new SqlConnection(connetionString);
             data = new DataTable("Food Recommend");
 
