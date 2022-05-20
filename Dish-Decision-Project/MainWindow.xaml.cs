@@ -507,10 +507,10 @@ namespace Dish_Decision_Project
 
                 new DecisionVariable("LoaiMonAn",        3),    // 3 possible values 
                 new DecisionVariable("NguyenLieu1", 130),  // 130 possible values  
-                new DecisionVariable("NguyenLieu2", 150),  // 140 possible values   
+                new DecisionVariable("NguyenLieu2", 150),  // 150 possible values   
                 new DecisionVariable("NguyenLieu3",   111),  // 111 possible values 
                 new DecisionVariable("NguyenLieu4",   108),  // 108 possible values   
-                new DecisionVariable("NguyenLieu5",   90)    // 91 possible values 
+                new DecisionVariable("NguyenLieu5",   90)    // 90 possible values 
             };
 
             // Huấn luyện
