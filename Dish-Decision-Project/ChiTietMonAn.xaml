@@ -113,7 +113,8 @@
                             Canh khổ qua nhồi thịt
                         </TextBlock>
                         <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200*"></ColumnDefinition>
                                 <ColumnDefinition Width="197*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
